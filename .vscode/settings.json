@@ -8,6 +8,7 @@
     "terminal.integrated.env.windows": {
         "SFDX_SET_CLIENT_IDS": "sfdx-vscode"
     },
+    "salesforcedx-vscode-apex.java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/",
     "salesforcedx-vscode-core.show-cli-success-msg": false,
     "emeraldwalk.runonsave": {
         "commands": [
