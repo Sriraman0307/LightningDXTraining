@@ -13,7 +13,7 @@
         "commands": [
             {
                 "match": ".*",
-                "cmd": "cd '${workspaceRoot}' && sfdx force:source:push"
+                "cmd": "cd ${workspaceRoot} && sfdx force:source:push"
             }
         ]
     }
