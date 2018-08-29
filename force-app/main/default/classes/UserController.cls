@@ -11,4 +11,11 @@ public with sharing class UserController {
 		contact objContact = [Select id, LastName,MobilePhone from Contact where MobilePhone =:MobilePhone];
         return objContact;
     } 
+    @AuraEnabled
+    public static List<ToDo_Task__c> getToDos(){
+        system.debug('@@@Inside getToDos');
+		List<ToDo_Task__c> lstToDos = [Select id, Name, Task_Detail__c from ToDo_Task__c];
+        return lstToDos;
+    }
+
 }

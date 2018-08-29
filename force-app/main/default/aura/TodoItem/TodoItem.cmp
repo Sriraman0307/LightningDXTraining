@@ -1,0 +1,5 @@
+<aura:component>
+    <div>
+        <ui:inputText label="ToDo Item"> </ui:inputText>
+    </div>
+</aura:component>	

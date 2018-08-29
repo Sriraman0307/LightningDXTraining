@@ -1,0 +1,22 @@
+<aura:component controller = "UserController">
+    <aura:attribute name="todos" type="ToDo_Task__c[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div>
+        <section>
+            <div>
+                <c:TodoHeader/>
+            </div>
+            <section>
+                <div>
+                    <aura:iteration items ="{!v.todos}" var="todo">
+                        {!todo.Task_Detail__c}<br/>
+                    </aura:iteration>
+                    <c:TodoItem/>
+                </div>
+            </section>
+            <div>    
+                <c:TodoFooter/>
+            </div>
+        </section>
+    </div> 
+</aura:component>	
