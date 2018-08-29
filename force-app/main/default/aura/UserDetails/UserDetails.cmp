@@ -1,0 +1,22 @@
+<aura:component controller = "UserController">
+    <aura:attribute name="user" type="User" default= "{ 'sobjectType': 'User', 'Last Name': 'Initial LastName'}"/>
+    <aura:attribute name="mobilePhoneAtt" type="String" />
+	<div> Test Component</div>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div>
+        <div>
+            <ui:inputText aura:id="Mobile" label="Mobile Number"
+                           required="True"/>
+        </div>
+        <div>
+            <ui:inputText aura:id="MobileInSync" label="Mobile Number" value = "{!v.mobilePhoneAtt}"
+                           required="False"/>
+        </div>
+        <div>
+        	<br/><lightning:button label="Submit" name="submit" aura:id="SearchUser" onclick="{!c.submit}" />
+        </div>
+        <div>
+        	<p >Last Name: {!v.user.LastName}</p>
+        </div>
+    </div>
+</aura:component>

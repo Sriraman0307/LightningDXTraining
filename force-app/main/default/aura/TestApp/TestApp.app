@@ -1,5 +1,5 @@
 <aura:application>
     <h1>
-        Hi from lightning..
+        <c:UserDetails/>
     </h1>
 </aura:application>	
