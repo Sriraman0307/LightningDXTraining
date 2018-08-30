@@ -20,8 +20,11 @@ public with sharing class UserController {
     @AuraEnabled
     public static List<ToDo_Task__c> insertRecord(ToDo_Task__c objRecord){
         system.debug('@@@Inside insertRecord');
-		insert objRecord;
-        List<ToDo_Task__c> lstToDos = [Select id, Name,createdDate, Task_Detail__c from ToDo_Task__c Order By createdDate];
+        List<ToDo_Task__c> lstToDos = new List<ToDo_Task__c>();
+        if(objRecord != null){
+            insert objRecord;
+            lstToDos = [Select id, Name,createdDate, Task_Detail__c from ToDo_Task__c Order By createdDate];
+        }
         return lstToDos;
     }
 }

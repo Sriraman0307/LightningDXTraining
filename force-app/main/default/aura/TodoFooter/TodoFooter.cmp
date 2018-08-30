@@ -1,5 +1,6 @@
 <aura:component>
+        <aura:attribute name="resultAttribute" type ="string"></aura:attribute>
     <div>
-        <ui:inputText label="Test"> </ui:inputText>
+        <ui:inputText label="Result" value ="{!v.resultAttribute}"> </ui:inputText>
     </div>
 </aura:component>	

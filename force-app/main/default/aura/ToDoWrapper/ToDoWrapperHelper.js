@@ -15,14 +15,26 @@
         $A.enqueueAction(action);
     },
     insertRecord : function(component,event){
-        console.log("Inside Helper");
-        var taskObj = event.getParam("objectAssignment");
+
+        if(event.getParam("objectAssignment") !="undefined"){
+            var taskObj = event.getParam("objectAssignment");
+        }
+        else{
+            var taskObj = component.get("v.todos");
+        }
         var action = component.get("c.insertRecord");
+        var resultObj = event.getParam("result");
+        console.log("resultObj : " + resultObj);
+        console.log("taskObj : " + taskObj);
         action.setParams({"objRecord" : taskObj});
         action.setCallback(this,function(response){
             var state = response.getState();
             if(state = "SUCCESS"){
-                component.set("v.todos",response.getReturnValue());
+                if(response.getReturnValue().length>0){
+                    console.log("Value not null :" + response.getReturnValue());
+                    component.set("v.todos",response.getReturnValue());
+                }
+                component.set("v.resultTobePrinted",resultObj);
             }
             else{
                 console.log("Unkown Error");

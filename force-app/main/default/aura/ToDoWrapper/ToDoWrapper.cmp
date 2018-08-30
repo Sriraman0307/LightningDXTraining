@@ -1,5 +1,6 @@
 <aura:component controller = "UserController">
     <aura:attribute name="todos" type="ToDo_Task__c[]" />
+    <aura:attribute name="resultTobePrinted" type="string" />
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:handler name="eventToBeCalled" event ="c:TodoEvent" action="{!c.listentoEvent}"></aura:handler>
     <div>
@@ -18,7 +19,7 @@
                 </div>
             </section>
             <div>    
-                <c:TodoFooter/>
+                <c:TodoFooter resultAttribute = "{!v.resultTobePrinted}"/>
             </div>
         </section>
     </div> 

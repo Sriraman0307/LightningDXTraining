@@ -1,3 +1,4 @@
 <aura:event type="COMPONENT" description="Event template">
     <aura:attribute name="objectAssignment" type ="ToDo_Task__c"></aura:attribute>
+    <aura:attribute name="result" type ="String"></aura:attribute>
 </aura:event>
