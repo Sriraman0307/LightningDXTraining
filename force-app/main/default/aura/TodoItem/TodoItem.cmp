@@ -1,5 +1,10 @@
-<aura:component>
+<aura:component controller ="UserController">
+    <aura:attribute name="boolAvailable" type="string" />
+    <aura:attribute name="todos" type="ToDo_Task__c[]" />
+    <aura:attribute name="todoObj" type="ToDo_Task__c" default="{'sObjectType' :'ToDo_Task__c' , 'Task_Detail__c' : 'TypeHere'}"/>
+    <aura:registerEvent name="eventToBeCalled" type="c:TodoEvent"></aura:registerEvent>
     <div>
-        <ui:inputText label="ToDo Item"> </ui:inputText>
+        <ui:inputText label="ToDo Item" aura:id="ItemEntered" value ="{!v.todoObj.Task_Detail__c}" keyup ="{!c.checkData}"> </ui:inputText>
+        <ui:inputText label="Available?" aura:id="Available?" value ="{!v.boolAvailable}"> </ui:inputText>
     </div>
 </aura:component>	

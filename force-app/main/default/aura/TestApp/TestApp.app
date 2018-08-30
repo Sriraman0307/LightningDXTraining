@@ -8,7 +8,7 @@
     <body>
         <div>
             <c:ToDoWrapper/>
-        </div>
+        </div> 
     </body>
     
 </aura:application>	

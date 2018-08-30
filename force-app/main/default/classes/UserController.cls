@@ -17,5 +17,11 @@ public with sharing class UserController {
 		List<ToDo_Task__c> lstToDos = [Select id, Name, Task_Detail__c from ToDo_Task__c];
         return lstToDos;
     }
-
+    @AuraEnabled
+    public static List<ToDo_Task__c> insertRecord(ToDo_Task__c objRecord){
+        system.debug('@@@Inside insertRecord');
+		insert objRecord;
+        List<ToDo_Task__c> lstToDos = [Select id, Name,createdDate, Task_Detail__c from ToDo_Task__c Order By createdDate];
+        return lstToDos;
+    }
 }
